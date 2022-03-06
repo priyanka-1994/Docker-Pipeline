@@ -28,10 +28,12 @@ pipeline{
                 }
             }
         }
-        // stage('remove unused image') {
-        //     steps {
-        //             sh "docker rmi $imagename:$BUILD_ID"
-        //             sh "docker rmi $imagename:latest"
-        //         }
-    }
-}
+         stage('remove unused image') {
+             steps {
+                     sh "docker rmi $imagename:$BUILD_ID"
+                     sh "docker rmi $imagename:latest"
+                    }
+                 }
+            }
+      }
+ }
